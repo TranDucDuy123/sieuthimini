@@ -16,13 +16,14 @@ $white_2: #dcf9e4;
     background-image: linear-gradient(to right,
             $color_light-0 0%,
             $color_light-1 51%,
-            #d5f5dc 100%);
+            $color_light-3 100%);
     margin: 10px;
     background-size: 200%;
     transition: 0.5s;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+
     &:hover {
         background-position: right center;
     }
@@ -144,12 +145,6 @@ header {
                 font-size: 20px;
                 color: $color_light-3;
             }
-
-            
-
-            span {
-                color: $color_light-0;
-            }
         }
 
         #login_1 {
@@ -189,6 +184,7 @@ nav {
     background-color: $color_light-0;
     position: sticky;
     top: 0;
+
     .listcatalog {
         height: 100%;
         display: flex;
@@ -230,64 +226,76 @@ nav {
 
 .banner {
     width: 100%;
-    height:100vh;
+    height: 100vh;
     background-color: #82cd47;
     background-image: url(/img/bgbanner2.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
-    .content_banner{
+
+    .content_banner {
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: center;
-        h1{
+
+        h1 {
             margin-bottom: 0px;
             font-size: 100px;
             font-weight: 600;
             text-transform: capitalize;
             color: $color_light-0;
             text-shadow: 3px 1px $color_light-3;
-            background-color: rgba(202,255 ,112, 0.1);
+            background-color: rgba(202, 255, 112, 0.1);
             border-radius: 20px;
         }
-        h2{
+
+        h2 {
             font-size: 80px;
             color: $white_2;
             text-shadow: 2px 1px $color_light-3;
-            background-color: rgba(202,255 ,112, 0.1);
+            background-color: rgba(202, 255, 112, 0.1);
             border-radius: 20px;
             text-transform: capitalize;
             text-align: center;
         }
-        h3{
+
+        h3 {
             font-size: 30px;
-            text-shadow: 2px 2px $white_2;
-            background-color: rgba(202,255 ,112, 0.005);
-            color: $color_light-1;
+            text-shadow: 2px 2px $color_light-1;
+            background-color: rgba(202, 255, 112, 0.005);
+            color: $color_light-3;
             text-transform: capitalize;
             text-align: center;
         }
-        .btn{
+
+        .btn {
             font-size: 30px;
-            padding-left:  30px;
+            padding-left: 30px;
             padding-right: 30px;
             border: $color_light-3 solid 1px;
         }
-        
+
+        .icon_down {
+            cursor: pointer;
+            align-items: center;
+
+            i {
+                font-size: 50px;
+                color: $color_dark-3;
+            }
+
+        }
     }
 }
-footer{
+
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
-    .icon_down{
-        i {
-            color: #191a19;
-            font-size: 20px;
-        }
-    }
+
+
 }
 
 // animate
@@ -303,5 +311,22 @@ footer{
 
     51% {
         opacity: 1;
+    }
+}
+
+@keyframes upToDown_1 {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 }

@@ -1,5 +1,5 @@
 .btn {
-  background-image: linear-gradient(to right, #379237 0%, #54b435 51%, #d5f5dc 100%);
+  background-image: linear-gradient(to right, #379237 0%, #54b435 51%, #f0ff42 100%);
   margin: 10px;
   background-size: 200%;
   transition: 0.5s;
@@ -120,9 +120,6 @@ header .menu_login #login_0 i {
   font-size: 20px;
   color: #f0ff42;
 }
-header .menu_login #login_0 span {
-  color: #379237;
-}
 header .menu_login #login_1 {
   display: none;
   align-items: center;
@@ -225,9 +222,9 @@ nav li i {
 }
 .banner .content_banner h3 {
   font-size: 30px;
-  text-shadow: 2px 2px #dcf9e4;
+  text-shadow: 2px 2px #54b435;
   background-color: rgba(202, 255, 112, 0.005);
-  color: #54b435;
+  color: #f0ff42;
   text-transform: capitalize;
   text-align: center;
 }
@@ -237,16 +234,20 @@ nav li i {
   padding-right: 30px;
   border: #f0ff42 solid 1px;
 }
+.banner .content_banner .icon_down {
+  cursor: pointer;
+  align-items: center;
+}
+.banner .content_banner .icon_down i {
+  font-size: 50px;
+  color: #d8e9a8;
+}
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
-}
-footer .icon_down i {
-  color: #191a19;
-  font-size: 20px;
 }
 
 @keyframes upToDown {
@@ -259,5 +260,19 @@ footer .icon_down i {
   }
   51% {
     opacity: 1;
+  }
+}
+@keyframes upToDown_1 {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }/*# sourceMappingURL=home.css.map */
