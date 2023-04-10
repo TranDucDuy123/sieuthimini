@@ -11,7 +11,22 @@ $color_dark-3: #d8e9a8;
 $white_1: #989896;
 $white_2: #dcf9e4;
 
-
+.btn {
+    // background-color: $color_light-2 ;
+    background-image: linear-gradient(to right,
+            $color_light-0 0%,
+            $color_light-1 51%,
+            #d5f5dc 100%);
+    margin: 10px;
+    background-size: 200%;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+        background-position: right center;
+    }
+}
 
 body {
     margin: 0;
@@ -20,17 +35,22 @@ body {
     font-family: "Roboto", sans-serif;
     position: relative;
 }
+
 header {
     height: 140px;
+    width: 100%;
     position: relative;
-    background-color:rgba(0,0,0,0.8);
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+
     .grid.wide {
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .bg_blur{
+
+    .bg_blur {
         height: 100%;
         width: 100%;
         background-color: white;
@@ -113,7 +133,7 @@ header {
 
     .menu_login {
         width: 30%;
-        
+
         #login_0 {
             display: flex;
             justify-content: center;
@@ -125,30 +145,9 @@ header {
                 color: $color_light-3;
             }
 
-            a {
-                text-decoration: none;
-                margin: 0 10px;
-                font-weight: 400;
-                color: $color_dark-3;
-            }
-            .btn{
-                // background-color: $color_light-2 ;
-                background-image: linear-gradient(
-                    to right,
-                    $color_light-0 0%,
-                    $color_light-1 51%,
-                    $color_light-1 100%
-                  );
-                background-size: 150%;
-                transition: 0.5s;
-                padding: 5px;
-                border-radius: 5px;
-                & :hover{
-                    background-position: right center;
-                }
-            }
+            
 
-            span{
+            span {
                 color: $color_light-0;
             }
         }
@@ -186,8 +185,10 @@ header {
 
 nav {
     height: 40px;
+    width: 100%;
     background-color: $color_light-0;
-
+    position: sticky;
+    top: 0;
     .listcatalog {
         height: 100%;
         display: flex;
@@ -216,6 +217,7 @@ nav {
         &:hover {
             background-color: $color_light-2;
         }
+
         &:hover span {
             animation: upToDown 0.3s;
         }
@@ -228,39 +230,78 @@ nav {
 
 .banner {
     width: 100%;
-    height: 100vh;
-    position: relative;
+    height:100vh;
     background-color: #82cd47;
     background-image: url(/img/bgbanner2.jpg);
     background-size: cover;
-    background-position: center;
-
-    .img_model {
-        height: 500px;
-        width: 400px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url(/img/taphoa4.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom;
-        position: absolute;
-        right: 300px;
-        top: 100px;
+    background-position: top;
+    position: relative;
+    .content_banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        h1{
+            margin-bottom: 0px;
+            font-size: 100px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: $color_light-0;
+            text-shadow: 3px 1px $color_light-3;
+            background-color: rgba(202,255 ,112, 0.1);
+            border-radius: 20px;
+        }
+        h2{
+            font-size: 80px;
+            color: $white_2;
+            text-shadow: 2px 1px $color_light-3;
+            background-color: rgba(202,255 ,112, 0.1);
+            border-radius: 20px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        h3{
+            font-size: 30px;
+            text-shadow: 2px 2px $white_2;
+            background-color: rgba(202,255 ,112, 0.005);
+            color: $color_light-1;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        .btn{
+            font-size: 30px;
+            padding-left:  30px;
+            padding-right: 30px;
+            border: $color_light-3 solid 1px;
+        }
+        
+    }
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    .icon_down{
+        i {
+            color: #191a19;
+            font-size: 20px;
+        }
     }
 }
 
 // animate
 @keyframes upToDown {
     49% {
-      transform: translateY(100%);
+        transform: translateY(100%);
     }
+
     50% {
-      opacity: 0;
-      transform: translateY(-100%);
+        opacity: 0;
+        transform: translateY(-100%);
     }
+
     51% {
-      opacity: 1;
+        opacity: 1;
     }
-  } 
+}
