@@ -1,0 +1,206 @@
+$color_light-0: #379237;
+$color_light-1: #54b435;
+$color_light-2: #82cd47;
+$color_light-3: #f0ff42;
+// dark mode
+$color_dark-0: #191a19;
+$color_dark-1: #1e5128;
+$color_dark-2: #4e9f3d;
+$color_dark-3: #d8e9a8;
+
+$white_1: #989896;
+$white_2: #dcf9e4;
+
+
+
+
+header {
+    height: 100px;
+    position: relative;
+
+    .grid.wide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        border-bottom: 4px solid $color_light-0;
+        border-top: 1px solid $white_1;
+        border-right: 1px solid $white_1;
+        border-left: 1px solid $white_1;
+        position: relative;
+
+        #txtsearch {
+            width: 90%;
+            height: 100%;
+            outline: none;
+            font-size: 16px;
+            border: none;
+        }
+
+        #txtsearch::placeholder {
+            color: $color_light-0;
+        }
+
+        .icon_search {
+            width: 10%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color_light-2;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 0 4px 0 0;
+            color: $color_dark-1;
+        }
+
+    }
+
+    #logo {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 20px;
+
+
+        img {
+            height: 80px;
+            width: 80px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: $color_light-1;
+            height: 20%;
+        }
+    }
+
+
+    .menu_login {
+        height: 100%;
+        width: 30%;
+
+        #login_0 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+
+            i {
+                font-size: 20px;
+                color: $color_light-0;
+            }
+
+            a {
+                text-decoration: none;
+                margin: 0 10px;
+                color: $color_dark-1;
+            }
+        }
+
+        #login_1 {
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            .icon_user {
+                background-color: $color_light-2;
+                height: 40px;
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+            }
+
+            i {
+                font-size: 30px;
+                color: $color_dark-1;
+            }
+
+            span {
+                height: 100%;
+                color: $color_dark-1;
+                font-size: 18px;
+                align-items: end;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+nav {
+    margin-top: 10px;
+    height: 40px;
+    background-color: $color_light-0;
+
+    .listcatalog {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul {
+        height: 100%;
+        display: flex;
+        list-style: none;
+        color: $white_2;
+        text-transform: uppercase;
+    }
+
+    li {
+        height: 100%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color_light-2;
+        }
+
+        i {
+            margin: 0 5px;
+        }
+    }
+}
+
+.banner {
+    width: 100%;
+    height: 80vh;
+    background-image: url(/img/bg1.png);
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+
+    .img_model {
+        height: 500px;
+        width: 400px;
+        background-image: url(/img/taphoa4.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        position: absolute;
+        right: 300px;
+        top: 100px;
+    }
+}
