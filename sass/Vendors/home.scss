@@ -13,21 +13,37 @@ $white_2: #dcf9e4;
 
 
 
-
-header {
-    height: 100px;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
     position: relative;
-
+}
+header {
+    height: 140px;
+    position: relative;
+    background-color:rgba(0,0,0,0.8);
     .grid.wide {
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+    .bg_blur{
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+    }
 
     .search {
-        height: 100%;
         width: 30%;
         display: flex;
+        background-color: white;
         justify-content: center;
         align-items: center;
         padding: 5px;
@@ -70,6 +86,7 @@ header {
     #logo {
         height: 100%;
         width: 30%;
+        opacity: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -81,8 +98,8 @@ header {
 
 
         img {
-            height: 80px;
-            width: 80px;
+            height: 100px;
+            width: 100px;
         }
 
         p {
@@ -95,9 +112,8 @@ header {
 
 
     .menu_login {
-        height: 100%;
         width: 30%;
-
+        
         #login_0 {
             display: flex;
             justify-content: center;
@@ -106,13 +122,34 @@ header {
 
             i {
                 font-size: 20px;
-                color: $color_light-0;
+                color: $color_light-3;
             }
 
             a {
                 text-decoration: none;
                 margin: 0 10px;
-                color: $color_dark-1;
+                font-weight: 400;
+                color: $color_dark-3;
+            }
+            .btn{
+                // background-color: $color_light-2 ;
+                background-image: linear-gradient(
+                    to right,
+                    $color_light-0 0%,
+                    $color_light-1 51%,
+                    $color_light-1 100%
+                  );
+                background-size: 150%;
+                transition: 0.5s;
+                padding: 5px;
+                border-radius: 5px;
+                & :hover{
+                    background-position: right center;
+                }
+            }
+
+            span{
+                color: $color_light-0;
             }
         }
 
@@ -148,7 +185,6 @@ header {
 }
 
 nav {
-    margin-top: 10px;
     height: 40px;
     background-color: $color_light-0;
 
@@ -170,12 +206,18 @@ nav {
     li {
         height: 100%;
         padding: 0 10px;
+        font-weight: 500;
         display: flex;
+        overflow: hidden;
         align-items: center;
+        transition: all 1s;
         cursor: pointer;
 
         &:hover {
             background-color: $color_light-2;
+        }
+        &:hover span {
+            animation: upToDown 0.3s;
         }
 
         i {
@@ -186,15 +228,19 @@ nav {
 
 .banner {
     width: 100%;
-    height: 80vh;
-    background-image: url(/img/bg1.png);
-    background-repeat: repeat;
-    background-size: cover;
+    height: 100vh;
     position: relative;
+    background-color: #82cd47;
+    background-image: url(/img/bgbanner2.jpg);
+    background-size: cover;
+    background-position: center;
 
     .img_model {
         height: 500px;
         width: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
         background-image: url(/img/taphoa4.png);
         background-repeat: no-repeat;
         background-size: contain;
@@ -204,3 +250,17 @@ nav {
         top: 100px;
     }
 }
+
+// animate
+@keyframes upToDown {
+    49% {
+      transform: translateY(100%);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    51% {
+      opacity: 1;
+    }
+  } 
