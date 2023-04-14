@@ -29,6 +29,33 @@ $white_2: #dcf9e4;
     }
 }
 
+.logo {
+    height: 100%;
+    width: 30%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        color: $color_light-1;
+        height: 20%;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -42,7 +69,7 @@ header {
     width: 100%;
     position: relative;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(15, 15, 15, 0.8);
 
     .grid.wide {
         height: 100%;
@@ -104,32 +131,7 @@ header {
 
     }
 
-    #logo {
-        height: 100%;
-        width: 30%;
-        opacity: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 20px;
 
-
-        img {
-            height: 100px;
-            width: 100px;
-        }
-
-        p {
-            margin: 0;
-            padding: 0;
-            color: $color_light-1;
-            height: 20%;
-        }
-    }
 
 
     .menu_login {
@@ -148,28 +150,43 @@ header {
         }
 
         #login_1 {
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 18px;
 
-            .icon_user {
-                background-color: $color_light-2;
-                height: 40px;
-                width: 40px;
+            .content_login_1 {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+            }
+
+            .icon_login_1 {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                background-size: 120%;
+                background-image: linear-gradient(to right,
+                        $color_light-0 0%,
+                        $color_light-1 51%,
+                        $color_light-3 100%);
+                color: $color_light-3;
+                padding: 10px;
                 border-radius: 50%;
-            }
 
-            i {
-                font-size: 30px;
-                color: $color_dark-1;
+                &:hover {
+                    background-position: right;
+                }
+
             }
 
             span {
                 height: 100%;
-                color: $color_dark-1;
+                color: $color_light-1;
                 font-size: 18px;
                 align-items: end;
                 margin-left: 10px;
@@ -226,7 +243,7 @@ nav {
 
 .banner {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     background-color: #82cd47;
     background-image: url(/img/bgbanner2.jpg);
     background-size: cover;
@@ -279,24 +296,18 @@ nav {
         .icon_down {
             cursor: pointer;
             align-items: center;
+            animation: upToDown_1 2s infinite linear;
 
             i {
                 font-size: 50px;
-                color: $color_dark-3;
+                color: $color_light-3;
             }
 
         }
     }
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
 
-
-}
 
 // animate
 @keyframes upToDown {
@@ -316,7 +327,7 @@ footer {
 
 @keyframes upToDown_1 {
     from {
-        transform: translateY(-100%);
+        transform: translateY(-30%);
         opacity: 0;
     }
 
@@ -326,7 +337,21 @@ footer {
     }
 
     to {
-        transform: translateY(-100%);
+        transform: translateY(100%);
         opacity: 0;
     }
+}
+
+// login 
+
+.banner {
+    display: none;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
 }
